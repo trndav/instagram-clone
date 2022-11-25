@@ -1,19 +1,24 @@
-<div id="<%= dom_id post %>" class="post-container">
+<div id="<%= dom_id post %>" class="text-center post-container col-6" style="margin: auto;">
+  <p>
+    <%#= post.description %>
+  </p>
+  <p>
+    <%= link_to "", post, class:"post-link", style:"z-index:" %>
+  </p>
+  <div class="action-buttons">
+    <% if user_signed_in? %>
+      <% if post.user.id == current_user.id %>
+        <%= link_to "Edit this post", edit_post_path(post), style:"z-index: 20;" %>
+        <%= button_to "Destroy this post", post, method: :delete %>
+      <% end %>
+    <% end %>
+  </div>
+  <% post.images.each do |image| %>
+    <%= image_tag(image, style: "
+      max-width: 50%;
+  height: auto; object-fit: contain;") %>
+  <% end %>
   <p>
     <%= post.title %>
   </p>
-  <p>
-    <%= post.description %>
-  </p>
-  <p>
-    <%= post.keywords %>
-  </p>
-  <p>
-  </p>
-  <p>
-    <%= link_to "", post, class:"post-link" %>
-  </p>
-  <% post.images.each do |image| %>
-    <%= image_tag(image, style: "object-fit: cover; width: 200px; height: 600px;") %>
-  <% end %>
 </div>
