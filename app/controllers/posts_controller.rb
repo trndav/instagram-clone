@@ -7,9 +7,12 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
+  def show
 
+   end
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = @post.comments.build
   end
 
   def myposts
