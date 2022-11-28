@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/nejdetkadir/followability.git
+  revision: 39d2cbf98c17d451773e96d8ea0866f89b135a76
+  branch: main
+  specs:
+    followability (1.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -225,6 +232,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.8, >= 4.8.1)
+  followability!
   importmap-rails
   jbuilder
   puma (~> 5.0)
