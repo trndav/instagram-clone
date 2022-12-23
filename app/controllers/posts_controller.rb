@@ -1,13 +1,22 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
   before_action :authenticate_user!, except: [:index, :show]
-
+include Pagy::Backend
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(:created_at => :asc)
+    @pagy, @posts = pagy_countless(@posts, items: 1)
+
   end
   def show
+
+   end
+
+   def discover
+
+    @posts = Post.all
+
+
 
    end
   # GET /posts/1 or /posts/1.json

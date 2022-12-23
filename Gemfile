@@ -9,13 +9,19 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
+gem 'ransack'
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # My Custom Gems
 gem 'devise', '~> 4.8', '>= 4.8.1'
- gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
+gem 'followability', github: 'nejdetkadir/followability', branch: 'main'
+gem 'rails_admin'
+gem 'pagy'
+gem 'active_analytics'
+gem 'punching_bag'
+
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -30,3 +36,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "sassc-rails"

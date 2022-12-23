@@ -1,5 +1,8 @@
 <%= stylesheet_link_tag("post")%>
 <% if user_signed_in? %>
+  <% if current_user.admin? %>
+    You are an Admin
+  <% end %>
   <% current_user.follow_requests.each do |request| %>
     <%= request.followerable.email %> Wants to follow you 
     <%= button_to "Accept", accept_path(request.followerable) %>
@@ -15,10 +18,8 @@
   <% end %>
 <% end %>
 <p style="color: green"><%= notice %></p>
-<div class="row">
-  <div id="posts" class="text-center">
-    <% @posts.each do |post| %>
-      <%= render post %>
-    <% end %>
-  </div>
-</div>
+<%= turbo_frame_tag :results, data: { turbo_action: 'advance' } do %>
+  <div id="posts"></div>
+  <%= turbo_frame_tag :pagination, loading: :lazy,
+                      src: posts_path(format: :turbo_stream) %>
+<% end %>

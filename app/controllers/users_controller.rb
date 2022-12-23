@@ -1,10 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!
+
+  def index
+
+  end
+
   def show
     @user = User.find(params[:id])
   end
-
   def follow
 
      current_user.send_follow_request_to(@user)
