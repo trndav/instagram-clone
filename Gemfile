@@ -37,3 +37,6 @@ group :test do
   gem "webdrivers"
 end
 gem "sassc-rails"
+gem "redis", "~> 4.0"
+
+gem "pg", "~> 1.4"

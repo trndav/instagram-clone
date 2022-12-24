@@ -160,6 +160,7 @@ GEM
     orm_adapter (0.5.0)
     pagy (5.10.1)
       activesupport
+    pg (1.4.5-x64-mingw-ucrt)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -207,6 +208,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
+    redis (4.8.0)
     regexp_parser (2.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -283,11 +285,13 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pagy
+  pg (~> 1.4)
   puma (~> 5.0)
   punching_bag
   rails (~> 7.0.4)
   rails_admin
   ransack
+  redis (~> 4.0)
   sassc-rails
   selenium-webdriver
   sprockets-rails
